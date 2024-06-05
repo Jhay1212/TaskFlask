@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpsort" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages%}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    {% block css %}
+    {% endblock %}
+{% endwith %}
+</head>
+<body>
+    {% block main %}
+    {% endblock %}
+</body>
+</html>

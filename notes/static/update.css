@@ -1,0 +1,66 @@
+@keyframes bg {
+  0% {
+    background: linear-gradient(teal, rgb(128, 30, 0)) ;
+    background-position:  0 0;
+  }
+  50% {
+    background-position: 50% 50%;
+    background: linear-gradient(rgb(128, 30, 0), rgb(94, 128, 0)) ;
+
+  }
+  100%{
+    background: linear-gradient(rgb(94, 128, 0), teal) ;
+    background-position: 100% 100%;
+  }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+  background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+  linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+  linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+  background: #000;
+    /* background: #000; */
+    /* animation: bg 3s linear infinite; */
+    /* animation-fill-mode: backwards; */
+}
+
+.container {
+    width: 300px;
+    /* background: linear-gradient(217deg,rgb(94, 128, 0), teal 70.71%),
+            linear-gradient(127deg, teal, rgb(128, 30, 0) 70.71%),
+            linear-gradient(336deg, rgb(128, 30, 0), rgb(94, 128, 0) 70.71%); */
+    text-transform: uppercase;
+    text-align: center;
+    animation: bg 2s ease infinite;
+  /*   height: 200px; */
+    background: #dada3d;
+    /* background-image: url(./bg.jpg); */
+    border-radius: 15px;
+   padding: 15px 15px;
+    margin: 5vh 2vw;
+    border: 5px solid beige;
+    animation: fadeIn .5s ease-in;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+     
+  }
+  .container h2.title {
+    font-family: Caveat;
+    font-weight: 900;
+    text-align: center;
+    margin: 10px 5px;
+    font-style: underline;
+  }
+  .container form {
+    text-align: center;
+  }
+  input {
+    margin: 12px auto;
+  }

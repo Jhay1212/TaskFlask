@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block css%}
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css')}}">
+{% endblock %}
+{% block main %}
+
+<div class="bonjing"></div>
+<div class="container">
+    <form action="" method="post">
+        <legend>Signin</legend>
+        <div class="input-cont">
+
+            <input type="text" name="username" id="">
+            <label for="username">Username</label>
+        </div>
+
+        <div class="input-cont">
+
+            
+            <input type="password" name="password" id="">
+            <label for="username">Password</label>
+        </div>
+        <button type="submit">Signin</button>
+    </form>
+
+</div>
+{% endblock %}

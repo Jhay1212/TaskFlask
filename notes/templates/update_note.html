@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='update.css')}}">
+{% endblock %}
+{% block main %}
+<div class="container">
+    <h2>Updating task <br> {{ note }}</h2>
+    <form action="" method="post">
+        <input type="text" name="title" id="" placeholder="Update Title" value="{{ note }}">
+        <input type="text" name="category" id="" placeholder="Update Category" value="{{ note.category }}">
+        <button type="submit">Update Note</button>
+    </form>
+</div>
+{% endblock %}

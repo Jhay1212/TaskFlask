@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css')}}">
+{% endblock %}
+    
+{% block main %}
+<div class="c">
+    <div class="bubbles">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+</div>
+<main>
+    <div class="create container">
+        <h2 class="title">{{ user.username }}</h2>
+        <h2 class="title">Create</h2>
+    <form action="" method="post">
+
+        <input type="text" name="title" id="" placeholder='Title'>
+        <label for="title">Title</label><br>
+        <input type="text" name="category" id="" placeholder='Homework, Chores, Plans...'>
+        <label for='category'>Category</label>
+        <button type="submit">Create</button>
+    </form>
+
+    </div>
+    {% for category in categories %}
+    <div class="container">
+        <h2 class="title">{{ category }}</h2>
+        <ul>
+            {% for note in category.notes %}
+            <li>{{ note.title }}
+                {% if note.status %}
+                <span class="done"> 
+                Done
+            
+            </span></li>
+            {% else %}
+
+            <span class="not-done"> 
+                Not Done
+            
+            </span></li>
+            {% endif %}
+            <div class="input-container">
+                <a href="{{ url_for('update_note', pk=note.id)}}">Update</a>
+                <a href="{{ url_for('delete_note', pk=note.id)}}">Delete</a>
+            </div>
+            {% endfor %}
+           
+        </ul>
+    </div>
+    {% endfor %}
+
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+{% endblock %}
